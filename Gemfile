@@ -6,7 +6,7 @@ gem 'bootstrap-sass', '2.0.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -22,6 +22,14 @@ group :assets do
 end
 
 gem 'jquery-rails', '2.0.2'
+
+group :development, :test do
+	gem 'sqlite3', "~> 1.0"
+	gem 'rspec-rails', "~> 2.0"
+end
+
+gem 'annotate', '2.5.0', group: :development
+
 
 group :test do
 	gem 'capybara', '1.1.2'
