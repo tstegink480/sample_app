@@ -18,7 +18,8 @@ describe "User Pages" do
 		it { should have_selector('title', text: user.name) }
 	end
 
-	describe "signup" do
+
+describe "signup" do
 
     before { visit signup_path }
 
@@ -36,10 +37,21 @@ describe "User Pages" do
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
+
+
+      describe "after submission" do
+        before { click_button submit }
+
+	it { should have_selector('title', text: 'Sign up') }
+	it { should have_content('error') }
       end
+      
+
+
 
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
+      end
       end
     end
   end
