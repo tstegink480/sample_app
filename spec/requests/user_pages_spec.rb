@@ -63,3 +63,14 @@ describe "signup" do
     end
   end
 end
+
+
+
+
+
+
+
+
+#Feature: Signing in
+#	Scenario
+# etc etc etc
